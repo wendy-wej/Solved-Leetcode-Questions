@@ -3,5 +3,21 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
+        
+        ##USING INBUILT METHODS
+        ''' 
         s.reverse()
         return s
+        '''
+        
+        ##USING TWO POINTER TECHNIQUE
+        i = 0
+        j = len(s)-1
+        while i < j:
+            s[i], s[j] = s[j], s[i]
+            i +=1
+            j -=1
+        return s
+
+        
+        
