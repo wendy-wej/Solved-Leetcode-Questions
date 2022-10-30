@@ -9,3 +9,10 @@ class Solution:
             return False
 
         return True
+    
+    '''
+    if sorted(s) == sorted(t):
+            return True
+        else:
+            return False
+    '''
