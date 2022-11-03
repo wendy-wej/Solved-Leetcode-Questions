@@ -15,3 +15,5 @@ class Solution:
                     continue
 
         return stack
+    
+##Check notes for a faster solution
