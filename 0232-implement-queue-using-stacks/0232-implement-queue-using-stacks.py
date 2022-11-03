@@ -1,21 +1,30 @@
 from collections import deque
 class MyQueue:
     def __init__(self):
-        self.arr = deque()
+        self.front = []
+        self.back = []
 
     def push(self, x: int) -> None:
-        self.arr.append(x)
+        self.back.append(x)
 
     def pop(self) -> int:
-        return self.arr.popleft()
+        self.PutBackInsideFront()
+        return self.front.pop()
         
 
     def peek(self) -> int:
-        return self.arr[0]
+        self.PutBackInsideFront()
+        return self.front[-1]
 
     def empty(self) -> bool:
-        return len(self.arr) == 0
+        self.PutBackInsideFront()
+        return len(self.front) == 0
 
+    def PutBackInsideFront(self):
+        if not self.front:
+            for i in range(len(self.back)):
+                self.front.append(self.back.pop())
+        return self.front
 
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
