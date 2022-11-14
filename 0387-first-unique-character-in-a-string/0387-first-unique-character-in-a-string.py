@@ -3,6 +3,4 @@ class Solution:
         for i in s:
             if s.count(i) == 1:
                 return s.index(i)
-            else:
-                continue
         return -1
