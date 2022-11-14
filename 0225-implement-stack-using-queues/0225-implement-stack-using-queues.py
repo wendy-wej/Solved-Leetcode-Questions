@@ -3,7 +3,8 @@ class MyStack:
 
     def __init__(self):
         self.queue1 = []
-        self.queue2 = []
+        #self.queue2 = []
+        
     def push(self, x: int) -> None:
         self.queue1.append(x)
 
