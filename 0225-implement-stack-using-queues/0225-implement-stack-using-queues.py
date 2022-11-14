@@ -16,11 +16,11 @@ class MyStack:
     def empty(self) -> bool:
         return len(self.queue1)==0
 
-    def PutOneintoTwo():
-        if not queue1:
-            for i in range(len(queue1)):
-                self.queue2.append(self.queue1.pop())
-        return queue1
+    # def PutOneintoTwo():
+    #     if not queue1:
+    #         for i in range(len(queue1)):
+    #             self.queue2.append(self.queue1.pop())
+    #     return queue1
         
 # Your MyStack object will be instantiated and called as such:
 # obj = MyStack()
