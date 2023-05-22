@@ -2,7 +2,7 @@ import heapq
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        
+     #Time complexity = O(n log(k))   
         identifier = set(nums)
         my_dict ={}
         for num in identifier:
