@@ -21,6 +21,7 @@ class Solution(object):
             fast, slow = fast.next, slow.next
         return True
     
+    
 
             
         
