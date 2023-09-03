@@ -1,33 +1,35 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
 
-        #count each character in t
-        t = Counter(t)
-        
-        #setup counter to search t in s
-        count = Counter()
-        length = len(s)
-        
-        left = 0
-        ans = [length, '']
-        string = ''
-        
-        for index, char in enumerate(s):#use sliding window to find t in s
-            
-            #keep moving the right pointer
-            string += char
-            if t[char]:
-                count[char] += 1
-            
-            while t <= count:#if every character in t is found in the string minimize window
-                ans = min(ans, [(index - left), string[left:]])#update the answer with minimum length string
-                
-                if t[s[left]]:
-                    count[s[left]] -= 1
-                
-                left += 1
-        return ans[1]
-                
+        if t == "":
+            return ""
+
+        countT, window = {}, {}
+        for c in t:
+            countT[c] = 1 + countT.get(c, 0)
+
+        have, need = 0, len(countT)
+        res, resLen = [-1, -1], float("infinity")
+        l = 0
+        for r in range(len(s)):
+            c = s[r]
+            window[c] = 1 + window.get(c, 0)
+
+            if c in countT and window[c] == countT[c]:
+                have += 1
+
+            while have == need:
+                # update our result
+                if (r - l + 1) < resLen:
+                    res = [l, r]
+                    resLen = r - l + 1
+                # pop from the left of our window
+                window[s[l]] -= 1
+                if s[l] in countT and window[s[l]] < countT[s[l]]:
+                    have -= 1
+                l += 1
+        l, r = res
+        return s[l : r + 1] if resLen != float("infinity") else ""
         
         
         
