@@ -7,7 +7,7 @@ class Solution:
         return ans
             
                 
-            
+#   ***sorted(words[i]) is much faster than Counter(words[i])            
             
             
             
