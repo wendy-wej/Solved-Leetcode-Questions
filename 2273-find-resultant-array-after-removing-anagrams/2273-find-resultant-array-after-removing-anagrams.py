@@ -2,7 +2,7 @@ class Solution:
     def removeAnagrams(self, words: List[str]) -> List[str]:
         ans = [words[0]]
         for i in range(len(words)-1):
-            if Counter(words[i]) != Counter(words[i+1]):
+            if sorted(words[i]) != sorted(words[i+1]):
                 ans.append(words[i+1])
         return ans
             
