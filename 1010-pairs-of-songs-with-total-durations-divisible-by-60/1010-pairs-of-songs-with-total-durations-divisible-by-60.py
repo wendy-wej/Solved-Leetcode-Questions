@@ -5,7 +5,10 @@ class Solution:
         
         for i in time:
             i = i % 60
-            ans = ans + other_half[(60-i)%60]
+            if i == 0:
+                ans = ans + other_half[0]
+            else:
+                ans = ans + other_half[(60-i)]
             other_half[i]+=1
         return ans
         
