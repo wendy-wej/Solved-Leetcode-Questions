@@ -1,8 +1,7 @@
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals.sort()
-        ans= []
-        ans.append(intervals[0])
+        ans = [intervals[0]]
         
         for start, end in intervals[1:]:
             prev_start = ans[-1][0]
