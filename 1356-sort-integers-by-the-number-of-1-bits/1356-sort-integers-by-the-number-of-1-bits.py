@@ -13,7 +13,7 @@ class Solution:
                 number >>= 1
             return count
             
-            return weight
+            #return weight
         
         arr.sort(key = lambda num: (count_set_bits(num), num))
         return arr
