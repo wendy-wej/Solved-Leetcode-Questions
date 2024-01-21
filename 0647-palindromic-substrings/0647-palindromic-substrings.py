@@ -1,22 +1,18 @@
 class Solution:
     def countSubstrings(self, s: str) -> int:
         ans = 0
-        #Even counter
-        
         
         for i in range(len(s)):
-            l = r = i
-            while l>=0 and r<len(s) and s[l]==s[r]:
-                l-=1
-                r+=1
-                ans+=1
+            ans += self.paliCounter(s,i,i)
+            ans += self.paliCounter(s,i,i+1)
+        return ans
                 
-            l = i
-            r = i+1
-            while l>=0 and r<len(s) and s[l]==s[r]:
-                l-=1
-                r+=1
-                ans+=1
+    def paliCounter(self, s, l, r):
+        ans = 0
+        while l>=0 and r<len(s) and s[l]==s[r]:
+            l-=1
+            r+=1
+            ans+=1
         return ans
                 
             
