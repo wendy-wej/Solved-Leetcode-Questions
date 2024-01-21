@@ -1,5 +1,7 @@
 class Solution:
     def judgeCircle(self, moves: str) -> bool:
+        ## count the no of each step and ensure that opposing directions cancel out
+        
         u = moves.count('U')
         d = moves.count('D')
         l = moves.count('L')
