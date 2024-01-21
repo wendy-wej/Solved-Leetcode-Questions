@@ -15,5 +15,5 @@ class Solution:
             
             #return weight
         
-        arr.sort(key = lambda num: (count_set_bits(num), num))
+        arr.sort(key = lambda x: (count_set_bits(x), x))
         return arr
