@@ -4,5 +4,6 @@ class Solution:
         
         dd,mm,yy = date.split()
         dd = dd[:-2].zfill(2)
-        return f"{yy}-{months[mm]}-{dd}"
+        mm = months[mm]
+        return f"{yy}-{mm}-{dd}"
         
