@@ -1,6 +1,9 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        while n > 0:
+        visited = set()
+        
+        while n > 0 and n not in visited:
+            visited.add(n)
             num_str = str(n)
             n = 0
             for i in range(len(num_str)):
