@@ -1,22 +1,14 @@
 class Solution:
     def maximizeGreatness(self, nums: List[int]) -> int:
-        nums.sort()
-        #print(nums)
-
-        ans=0
         l=0
-        r=1
-        
+        r=0
+        ans = 0
+        nums.sort()
         while r < len(nums):
-            if nums[l] == nums[r]:
-                r+=1
-            else:
-                
+            if nums[r] > nums[l]:
                 l+=1
-                
-                r+=1
-                
                 ans+=1
-                
+            r+=1
         return ans
+            
         
