@@ -1,27 +1,22 @@
-# min(MaxL, MaxR) - h[i]
-
 class Solution:
     def trap(self, height: List[int]) -> int:
-        if len(height) == 0:
-            return 0
+        if not height: return 0
         
         l = 0
-        ans = 0
-        r = len(height) -1
-        maxL = height[l]
-        maxR = height[r]
-        
+        r = len(height)-1
+        leftMax, rightMax = height[l], height[r]
+        rain = 0
+      
         while l < r:
-            if maxL < maxR:
+            if leftMax < rightMax:
                 l+=1
-                maxL = max(maxL, height[l])
-                ans += maxL - height[l]
-                
+                leftMax = max(leftMax, height[l])
+                rain += leftMax-height[l]
             else:
                 r-=1
-                maxR = max(maxR, height[r])
-                ans+= maxR - height[r]
+                rightMax = max(rightMax, height[r])
+                rain += rightMax-height[r]
+        return rain
                 
-        return ans
-            
+        
         
