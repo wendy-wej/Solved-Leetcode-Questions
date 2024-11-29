@@ -1,18 +1,11 @@
 class Solution:
     def invalidTransactions(self, transactions: List[str]) -> List[str]:
-        names = []
-        cities = []
-        times = []
-        amounts = []
         my_dict = {}
         ans = []
         
         for transaction in transactions:
             name, time, amount, city = transaction.split(',')
-            names.append(name)
-            times.append(int(time))
-            amounts.append(int(amount))
-            cities.append(city)
+            
             
             time = int(time)
             if time not in my_dict:
@@ -23,20 +16,24 @@ class Solution:
                 my_dict[time][name].append(city)
             
         
-        for i in range(len(transactions)):
-            if amounts[i] > 1000:
-                ans.append(transactions[i])
+        for i in transactions:
+            name, time, amount, city = i.split(',')
+            time = int(time)
+            amount = int(amount)
+            if amount > 1000:
+                ans.append(i)
                 continue
                 
-            for j in range(times[i]-60, times[i]+61):
+            for j in range(time-60, time+61):
                 if j not in my_dict:
                     continue
-                if names[i] not in my_dict[j]:
+                if name not in my_dict[j]:
                     continue
-                if len(my_dict[j][names[i]])> 1 or (my_dict[j][names[i]][0] != cities[i]):
-                    ans.append(transactions[i])
-                    break
-                
-            
+                if len(my_dict[j][name])> 1 or (my_dict[j][name][0] != city):
+                    ans.append(i)
+                    break                            
         return ans
+
+## Alternative solution is to use brute force and mark eact satisfied condition as True in a n array of length transactions. Then returning every transaction that is marked True
+
         
