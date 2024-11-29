@@ -10,5 +10,7 @@ class Solution:
             else:
                 ans[-1][1] =max(last[1], intervals[i][1])
         return ans
+    #TC : O (n log n) from the sort()
+    #SC: O (n)
                 
         
