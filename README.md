@@ -6,10 +6,12 @@ Compilation of all questions I've solved on leetcode - Created using [LeetHub](h
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/wendy-wej/Solved-Leetcode-Questions/tree/master/0001-two-sum) |
 | [0217-contains-duplicate](https://github.com/wendy-wej/Solved-Leetcode-Questions/tree/master/0217-contains-duplicate) |
 ## Hash Table
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/wendy-wej/Solved-Leetcode-Questions/tree/master/0001-two-sum) |
 | [0217-contains-duplicate](https://github.com/wendy-wej/Solved-Leetcode-Questions/tree/master/0217-contains-duplicate) |
 ## Sorting
 |  |
